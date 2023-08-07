@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="pt-4">
+    <button class="rounded-md m-4 bg-blue-400 p-1 hover:bg-blue-300">
+        <span class="text-gray-100">
+            Добавить задание
+        </span>
+    </button>
+
+    <table class="table-fixed w-full">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Board Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full">
+            <td class="">
+                <div class="rounded-full bg-gray-300 p-1 m-2">
+                    <span class="flex-1 ml-3 whitespace-nowrap">
+                            {{ task.name }}
+                    </span>
+                </div>
+            </td>
+            <td class="w-16">
+                <span class="flex-1 ml-3 whitespace-nowrap">
+                    {{ task.date }}
+                </span>
+            </td>
+            <td class="">
+                <span class="flex-1 ml-3 whitespace-nowrap">
+                    {{ task.boardName }}
+                </span>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+<script>
+
+</script>
